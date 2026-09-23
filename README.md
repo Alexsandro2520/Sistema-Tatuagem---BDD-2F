@@ -2,6 +2,8 @@
 
 Bem-vindo(a)! Este repositório é o material de um curso passo a passo pra você construir, do zero, um sistema web completo — banco de dados, API e frontend — usando como tema a gestão de um estúdio de tatuagem.
 
+Repositório da Cintia: https://github.com/cintiapinho/projetocombanco
+
 ## O que você vai construir
 
 Um sistema com três partes conversando entre si:
