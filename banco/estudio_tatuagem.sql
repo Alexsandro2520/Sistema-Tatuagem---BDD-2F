@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/09/2026 às 21:58
+-- Tempo de geração: 14/10/2026 às 05:53
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -46,8 +46,9 @@ CREATE TABLE `agendamento` (
 --
 
 INSERT INTO `agendamento` (`idagendamento`, `idcliente`, `idtatuador`, `dataagendamento`, `horaagendamento`, `descricaotatuagem`, `desenhoaprovado`, `valortatuagem`, `status`) VALUES
-(1, 1, 1, '2025-05-10', '14:00:00', 'Mandala no braço', NULL, 350.00, 'pendente'),
-(2, 2, 2, '2025-05-11', '10:00:00', 'Rosa aquarela no ombro', NULL, 200.00, 'pendente');
+(1, 1, 1, '2026-10-22', '16:00:00', 'Fênix nas costas segurando um arco', NULL, 480.00, 'confirmado'),
+(2, 2, 2, '2025-05-11', '10:00:00', 'Rosa aquarela no ombro', NULL, 200.00, 'pendente'),
+(4, 4, 2, '2026-10-30', '04:54:00', NULL, '4_spr_vo_max.png', 25.30, 'pendente');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,10 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`idcliente`, `nome`, `cpf`, `telefone`, `datacadastro`, `cidade`, `uf`) VALUES
 (1, 'Ana Silva', '44444444444', '11988880001', '2024-01-15', 'São Paulo', 'SP'),
-(2, 'Bruno Costa', '55555555555', '31988880002', '2024-03-22', 'Belo Horizonte', 'MG');
+(2, 'Bruno Costa', '55555555555', '31988980002', '2026-10-14', 'Belo Horizonte', 'MG'),
+(3, 'Lelezao', '11122233344', '1190028922', '2010-09-16', 'Santo Andre', 'SP'),
+(4, 'Davizera', '22233311145', '1190028122', '0000-00-00', 'Santo Andre', 'SP'),
+(6, 'Abobado Desleixado', '12345678900', '1190028922', '2026-10-14', 'Lambari', 'MG');
 
 -- --------------------------------------------------------
 
@@ -215,13 +219,13 @@ ALTER TABLE `tatuador_estilo`
 -- AUTO_INCREMENT de tabela `agendamento`
 --
 ALTER TABLE `agendamento`
-  MODIFY `idagendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idagendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `estilo`
@@ -233,7 +237,7 @@ ALTER TABLE `estilo`
 -- AUTO_INCREMENT de tabela `senioridade`
 --
 ALTER TABLE `senioridade`
-  MODIFY `idsenioridade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idsenioridade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tatuador`

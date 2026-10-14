@@ -69,7 +69,6 @@ Você precisa ativar a caixinha antes de usar. **Faça isso toda vez que for tra
 .\venv\Scripts\Activate.ps1
 ```
 
-//CASO DE ERRO
 > Se aparecer erro de "política de execução", rode isso uma vez e confirme com `S`:
 > ```powershell
 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -101,12 +100,6 @@ A pasta `venv` tem centenas de arquivos e pesa muito. Não faz sentido mandar pr
 | `uvicorn`                | O servidor que vai rodar a API            |
 | `mysql-connector-python` | Conecta o Python ao banco MySQL           |
 | `python-dotenv`          | Lê configurações do arquivo `.env`        |
-
-### ATUALIZACAO (Alex)
-
-```powershell
-python.exe -m pip install --upgrade pip
-```
 
 ### Instalando
 
