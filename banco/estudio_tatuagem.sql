@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/10/2026 às 15:21
+-- Tempo de geração: 21/10/2026 às 04:30
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `estudio_tatuagem`
 --
-CREATE DATABASE IF NOT EXISTS `estudio_tatuagem` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `estudio_tatuagem`;
 
 -- --------------------------------------------------------
 
@@ -189,6 +187,15 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`idusuario`, `nome`, `email`, `senha`, `tipo`, `idcliente`) VALUES
+(1, 'Marco', 'marco@gmail.com', '$2b$12$UsSwMuBzFbOu.hUJFxKTaOaTKtQqZ6y8mOcpBRPwdYasezzXLvFx.', 'funcionario', NULL),
+(5, 'thomas', 'thomas@gmail.com', '$2b$12$KBpWI7cmkcFyEa/0fv4xIeAFkOkoEWeYmjmdzavndGoAW3QIUk.D6', 'funcionario', NULL),
+(9, 'Administrador', 'admin@estudio.com', '$2b$12$UftHOS1plA0H0MEeBVBODO3xouYYWqacOFCWL0GXlfs6JMu2iMFNG', 'admin', NULL);
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -280,7 +287,7 @@ ALTER TABLE `tatuador`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas
