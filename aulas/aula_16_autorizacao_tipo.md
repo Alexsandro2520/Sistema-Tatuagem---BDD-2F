@@ -63,6 +63,7 @@ Veja o hash aparecendo no terminal — é esse texto que você vai copiar pra cr
 
 ![Hash gerado no terminal, pronto para colar no INSERT](imagensexemplos/CriandohashDeAdmin.png)
 
+hash: $2b$12$UftHOS1plA0H0MEeBVBODO3xouYYWqacOFCWL0GXlfs6JMu2iMFNG
 
 > **Atenção com o `b'suasenha123'`:** o `b` antes das aspas diz ao Python "isso é uma senha, tipo bytes" — é o que o `bcrypt.hashpw` espera. Troque `suasenha123` pela senha que você quiser usar. E não esqueça do `.decode()` no final: sem ele, o resultado vem com `b'...'` ao redor (incluindo essas letras/aspas), o que corrompe o hash se você colar assim no banco.
 
@@ -79,8 +80,10 @@ VALUES ('Administrador', 'admin@estudio.com', 'COLE_O_HASH_AQUI', 'admin');
 python -c "import jwt; print(jwt.decode('SEU_TOKEN_AQUI', options={'verify_signature': False}))"
 ```
 
-O resultado deve mostrar `'tipo': 'admin'`.
+python -c "import jwt; print(jwt.decode('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbkBlc3R1ZGlvLmNvbSIsInRpcG8iOiJhZG1pbiIsImV4cCI6MTc5MjU1Mjk0N30.f54_MNHwuCBoX100V7NUquWhdQ2snxahKjlJFqjg_MA', options={'verify_signature': False}))"
 
+O resultado deve mostrar `'tipo': 'admin'`.
+{'sub': 'admin@estudio.com', 'tipo': 'admin', 'exp': 1792552947}
 ---
 
 ## Parte 3 — Backend: uma segunda camada de segurança

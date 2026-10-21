@@ -39,13 +39,13 @@ formEstilo.addEventListener('submit', async (e) => {
   const idEstilo = formEstilo.dataset.idEstilo
 
   if (idEstilo) {
-    await fetch(`${API}/estilos/${idEstilo}`, {
+    await fetchAutenticado(`${API}/estilos/${idEstilo}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(estilo)
     })
   } else {
-    await fetch(`${API}/estilos`, {
+    await fetchAutenticado(`${API}/estilos`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(estilo)
@@ -66,7 +66,7 @@ function preencherFormularioEdicao(estilo) {
 
 async function deletarEstilo(id) {
   if (!confirm('Tem certeza que deseja excluir este estilo?')) return
-  await fetch(`${API}/estilos/${id}`, { method: 'DELETE' })
+  await fetchAutenticado(`${API}/estilos/${id}`, { method: 'DELETE' })
   listarEstilos()
 }
 

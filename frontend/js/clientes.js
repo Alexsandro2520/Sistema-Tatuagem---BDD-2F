@@ -11,7 +11,7 @@ function limparFormulario() {
 }
 
 async function listarClientes() {
-  const resposta = await fetch(`${API}/clientes`)
+const resposta = await fetchAutenticado(`${API}/clientes`)
   const clientes = await resposta.json()
 
   const corpo = document.getElementById('corpo-tabela')
@@ -84,6 +84,6 @@ function preencherFormularioEdicao(cliente) {
 async function deletarCliente(id) {
   if (!confirm('Tem certeza que deseja excluir este cliente?')) return
 
-  await fetch(`${API}/clientes/${id}`, { method: 'DELETE' })
+  await fetchAutenticado(`${API}/clientes/${id}`, { method: 'DELETE' })
   listarClientes()
 }

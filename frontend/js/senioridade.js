@@ -16,7 +16,7 @@ function limparFormulario() {
 
 // ─── Carrega a lista de senioridades ao abrir a página ───
 async function listarSenioridades() {
-  const resposta = await fetch(`${API}/senioridade`)
+  const resposta = await fetchAutenticado(`${API}/senioridade`)
   const senioridades = await resposta.json()
 
   const corpo = document.getElementById('corpo-tabela')
@@ -76,6 +76,6 @@ function preencherFormularioEdicao(senioridade) {
 async function deletarSenioridade(id) {
   if (!confirm('Tem certeza que deseja excluir esta senioridade?')) return
 
-  await fetch(`${API}/senioridade/${id}`, { method: 'DELETE' })
+  await fetchAutenticado(`${API}/senioridade/${id}`, { method: 'DELETE' })
   listarSenioridades()
 }

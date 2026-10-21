@@ -204,6 +204,9 @@ Esse token você vai pegar depois de ter feito o login lá pelo `/docs`, como no
 
 ```powershell
 python -c "import jwt; print(jwt.decode('SEU_TOKEN_AQUI', options={'verify_signature': False}))"
+
+O meu(Alexsandro)
+python -c "import jwt; print(jwt.decode('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0aG9tYXNAZ21haWwuY29tIiwidGlwbyI6ImZ1bmNpb25hcmlvIiwiZXhwIjoxNzkyNTQ4NzYzfQ.QntkeK1e23lVjjiaXyLifhY-Q4T-WIoH0YBI43AIY1M', options={'verify_signature': False}))"
 ```
 
 Por exemplo, se seu token fosse `eyJhbGci.exemplo.assinatura`, o comando ficaria assim (o token substituindo `SEU_TOKEN_AQUI`, com as aspas simples continuando no mesmo lugar):

@@ -1,6 +1,8 @@
 // endereço da nossa API backend
 const API = 'http://127.0.0.1:8000'
 
+protegerPagina()   // bloqueia a página se não tiver login
+
 // elementos do formulário e do botão de enviar
 const formAgendamento = document.getElementById('form-agendamento')
 const botaoSubmit = document.getElementById('btn-submit-agendamento')
@@ -18,7 +20,7 @@ function limparFormulario() {
 
 // ─── Busca os clientes na API e preenche o <select> ───
 async function carregarClientes() {
-  const resposta = await fetch(`${API}/clientes`)
+  const resposta = await fetchAutenticado(`${API}/clientes`)
   const clientes = await resposta.json()
 
   const select = document.getElementById('idcliente')
@@ -31,7 +33,7 @@ async function carregarClientes() {
 
 // ─── Busca os tatuadores na API e preenche o <select> ───
 async function carregarTatuadores() {
-  const resposta = await fetch(`${API}/tatuadores`)
+  const resposta = await fetchAutenticado(`${API}/tatuadores`)
   const tatuadores = await resposta.json()
 
   const select = document.getElementById('idtatuador')
@@ -46,7 +48,7 @@ carregarClientes()
 carregarTatuadores()
 
 async function listarAgendamentos() {
-  const resposta = await fetch(`${API}/agendamentos`)
+  const resposta = await fetchAutenticado(`${API}/agendamentos`)
   const agendamentos = await resposta.json()
 
   const corpo = document.getElementById('corpo-tabela')
